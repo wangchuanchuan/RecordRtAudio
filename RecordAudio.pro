@@ -8,7 +8,7 @@ QT       += core widgets gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = rtAudio_1
+TARGET = RtAudio
 TEMPLATE = app
 
 LIBS += -lole32 \
