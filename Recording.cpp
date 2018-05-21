@@ -13,7 +13,6 @@ Recording::Recording(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //ui->comboDeviceInfo->setCurrentText();
 }
 
 Recording::~Recording()
@@ -68,7 +67,13 @@ void Recording::on_btnStop_clicked()
 void Recording::on_btnSetting_clicked()
 {
     m_sampleRate = ui->spinBox_sampleRate->text().toInt();
-
     qDebug()<<"m_sampleRate = "<<m_sampleRate<<endl;
+
+    QString RtDataFormat = ui->comboDataFormat->currentText();
+    qDebug()<<"RtDataFormat = "<<RtDataFormat<<endl;
+
+    bool ok;
+    m_RtDataFormat = RtDataFormat.toInt(&ok,16);
+    qDebug()<<"m_RtDataFormat = "<<m_RtDataFormat<<endl;
 }
 

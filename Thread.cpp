@@ -100,7 +100,7 @@ void pthread::run()
 
     for(int i = 0 ; i < adc.getDeviceCount() ; i++)
     {
-        qDebug()<< i << adc.getDeviceInfo(i).name.c_str();
+        qDebug()<<"DeviceInfo:"<< i << adc.getDeviceInfo(i).name.c_str()<<"sampleRates:"<<adc.getDeviceInfo(i).sampleRates.data();//打印设备信息
     }
 
     if (adc.getDeviceCount() < 1) {
@@ -119,8 +119,10 @@ void pthread::run()
     //unsigned int sampleRate = 44100;
     unsigned int bufferFrames = 256; // 256 sample frames
 
+    //RTAUDIO_SINT8,RTAUDIO_SINT16,RTAUDIO_SINT24,RTAUDIO_SINT32
+    //RTAUDIO_FLOAT32,RTAUDIO_FLOAT64
     try {
-        adc.openStream(&output, &input, RTAUDIO_SINT16, Recording::m_sampleRate,
+        adc.openStream(&output, &input, Recording::m_RtDataFormat, Recording::m_sampleRate,
                        &bufferFrames, &record, static_cast<void*>(&num),
                        NULL, &ErrorCallback);
 
@@ -144,10 +146,11 @@ void pthread::run()
 
     if (adc.isStreamOpen())
     {
-
-
         adc.closeStream();
     }
+
+    //cout<<adc.abortStream();
+    cout<<adc.getCurrentApi();
 
     qDebug()<<"m_sampleRate = "<<Recording::m_sampleRate<<endl;
     qDebug()<<"m_RtDataFormat = "<<Recording::m_RtDataFormat<<endl;

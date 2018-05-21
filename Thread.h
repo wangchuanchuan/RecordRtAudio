@@ -1,7 +1,7 @@
 ﻿#ifndef THREAD_H
 #define THREAD_H
 
-#include "./rtaudio//RtAudio.h"
+#include "./rtaudio/RtAudio.h"
 
 #include <QThread>
 #include <QStringList>
@@ -26,7 +26,7 @@ public:
     static int saw( void *outputBuffer, void *inputBuffer, unsigned int nBufferFrames,
              double streamTime, RtAudioStreamStatus status, void *userData );
     bool flag;
-    int num;//通过num进行判断是使用左声道、右声道、单声道
+    int num;//通过num进行判断是使用左声道、右声道、双声道
 
 
 protected:
