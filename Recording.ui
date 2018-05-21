@@ -49,7 +49,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>单声道</string>
+    <string>双声道</string>
    </property>
   </widget>
   <widget class="QPushButton" name="btnStop">
@@ -69,7 +69,7 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>50</y>
+     <y>70</y>
      <width>54</width>
      <height>12</height>
     </rect>
@@ -82,9 +82,9 @@
    <property name="geometry">
     <rect>
      <x>60</x>
-     <y>130</y>
+     <y>100</y>
      <width>54</width>
-     <height>12</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -94,15 +94,212 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>270</x>
-     <y>130</y>
+     <x>230</x>
+     <y>100</y>
      <width>54</width>
-     <height>12</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
     <string>位宽：</string>
    </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>采样格式：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>40</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>编码方式：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>70</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>字节序：</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>180</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>音频设备信息:</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboDeviceInfo">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>180</y>
+     <width>161</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboSampleFormat">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>30</y>
+     <width>69</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboEnCode">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>30</y>
+     <width>69</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_sampleRate">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>60</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>999999999</number>
+   </property>
+   <property name="value">
+    <number>44100</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_endian">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>60</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>65535</number>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_channel">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>100</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox_byteWide">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>100</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btnSetting">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>140</y>
+     <width>71</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>设置</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>140</y>
+     <width>54</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>数据格式：</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboDataFormat">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>140</y>
+     <width>71</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>0x1</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0x2</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0x4</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0x8</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0x10</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>0x20</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

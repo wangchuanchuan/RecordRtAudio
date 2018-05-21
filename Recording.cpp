@@ -1,11 +1,19 @@
 ﻿#include "Recording.h"
 #include "ui_Recording.h"
+#include <QDebug>
+
+unsigned int Recording::m_sampleRate = 44100;
+
+
+unsigned int Recording::m_RtDataFormat = 0x01;
 
 Recording::Recording(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Recording)
 {
     ui->setupUi(this);
+
+    //ui->comboDeviceInfo->setCurrentText();
 }
 
 Recording::~Recording()
@@ -26,6 +34,8 @@ void Recording::on_btnLeftChannel_clicked()
 //右声道
 void Recording::on_btnRightChannel_clicked()
 {
+
+
     if (Thread.isRunning())
             Thread.exit(0);
         Thread.flag = true;
@@ -53,3 +63,12 @@ void Recording::on_btnStop_clicked()
         qDebug() << "The end.";
     }
 }
+
+//参数设置
+void Recording::on_btnSetting_clicked()
+{
+    m_sampleRate = ui->spinBox_sampleRate->text().toInt();
+
+    qDebug()<<"m_sampleRate = "<<m_sampleRate<<endl;
+}
+
