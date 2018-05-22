@@ -15,6 +15,9 @@ debug/
 *.bak
 object_script.LibreCAD.*
 object_script.libdxfrw.*
+
+RecordAudio.pro.user
+
 # Win/qmake generated project files
 #*.vcproj
 #*.sln
@@ -25,7 +28,7 @@ custom-windows*.*
 *generated*
 Makefile*
 qmake_image_collection.cpp
-librecad.pro.user*
+RecordAudio.pro.user*
 librecad2.pro.user*
 *.qch
 *.qhc
