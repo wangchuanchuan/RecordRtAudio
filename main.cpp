@@ -22,5 +22,7 @@ int main(int argc, char *argv[])
     record.setWindowTitle("RecordRdAudio");
     record.show();
 
+    []{cout<<"hello world!"<<endl;}();//C++11 Lambda
+
     return a.exec();
 }
