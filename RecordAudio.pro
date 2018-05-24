@@ -8,6 +8,8 @@ QT       += core widgets gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
+
+DESTDIR = ./bin
 TARGET = RtAudio
 TEMPLATE = app
 
@@ -17,17 +19,21 @@ LIBS += -lole32 \
 
 DEFINES += __WINDOWS_DS__
 
+INCLUDEPATH += ./include\
+               ./libspeex
 
 HEADERS += \
     Thread.h \
     rtaudio/RtAudio.h \
-    Recording.h
+    Recording.h \
+
 
 SOURCES += \
     Thread.cpp \
     rtaudio/RtAudio.cpp \
     Recording.cpp \
-    main.cpp
+    main.cpp \
+
 
 FORMS += \
     Recording.ui

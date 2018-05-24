@@ -10,6 +10,7 @@
 #include "Recording.h"
 #include "rtaudio/RtAudio.h"
 
+
 #include <QApplication>
 #include <QDebug>
 
@@ -18,11 +19,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     Recording record;
-
     record.setWindowTitle("RecordRdAudio");
     record.show();
-
-    []{cout<<"hello world!"<<endl;}();//C++11 Lambda
 
     return a.exec();
 }
